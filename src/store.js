@@ -20,5 +20,6 @@ export const store = reactive({
     // Search textbox variable
     search: '',
 
+    // Variabile che indica se la ricerca sia stata effettuata o no
     researched: false,
 })
