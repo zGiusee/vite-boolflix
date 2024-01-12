@@ -21,28 +21,49 @@ export default {
 
   },
   methods: {
-    getFilmsInfo() {
+    getFilmsAndTvInfo() {
 
-      // Dichiaro la variabile dell api
-      let api = store.endpoint;
+      // ********** CHIAMATA API FILM **************
+      // Dichiaro la variabile dell apiFilms
+      let apiFilms = store.endpoint;
 
-      // Aggiungo all'api una variabile per fare la ricerca dei film
-      api += store.apiSearchFlim;
+      // Aggiungo all'apiFilms una variabile per fare la ricerca dei film
+      apiFilms += store.apiSearchFlim;
 
-      // Aggiungo alla chiamata api la chiave per far si che riceva l'accesso e il parametro di ricerca
-      api += `${store.apiKey}&query=${store.search}`;
+      // Aggiungo alla chiamata apiFilms la chiave per far si che riceva l'accesso e il parametro di ricerca
+      apiFilms += `${store.apiKey}&query=${store.search}`;
 
-      axios.get(api).then((response) => {
-        store.filmsArray = response.data.results
-        console.log(response)
+      axios.get(apiFilms).then((response) => {
+        store.filmsArray = response.data.results;
+        store.researched = true;
+        console.log(store.filmsArray)
       });
-    }
+
+
+
+      // ********** CHIAMATA API SerieTv **************
+      // Dichiaro la variabile dell apiTv
+      let apiTv = store.endpoint;
+
+      // Aggiungo all'apiTv una variabile per fare la ricerca delle serieTv
+      apiTv += store.apiSearchTv;
+
+      // Aggiungo alla chiamata apiTv la chiave per far si che riceva l'accesso e il parametro di ricerca
+      apiTv += `${store.apiKey}&query=${store.search}`;
+
+      axios.get(apiTv).then((response) => {
+        store.tvArray = response.data.results;
+        store.researched = true;
+        console.log(store.tvArray)
+      });
+
+    },
   },
 }
 </script>
 <template>
   <div>
-    <Header @perform_search="getFilmsInfo" />
+    <Header @perform_search="getFilmsAndTvInfo" />
     <Main />
   </div>
 </template>

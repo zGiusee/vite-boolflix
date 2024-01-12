@@ -14,6 +14,11 @@ export const store = reactive({
     // Array delle informazioni dei film
     filmsArray: [],
 
+    // Array delle informazioni delle serie tv
+    tvArray: [],
+
     // Search textbox variable
     search: '',
+
+    researched: false,
 })
