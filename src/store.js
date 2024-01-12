@@ -9,5 +9,8 @@ export const store = reactive({
     apiSearchTv: '/search/tv',
 
     // Chiave che mi permette di avere accesso all'api
-    apiKey: '?api_key=16370c316abef77df2df2315289dc9c5'
+    apiKey: '?api_key=16370c316abef77df2df2315289dc9c5',
+
+    // Search textbox variable
+    search: " "
 })
