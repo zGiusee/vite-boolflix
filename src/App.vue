@@ -21,13 +21,28 @@ export default {
 
   },
   methods: {
+    getFilmsInfo() {
 
+      // Dichiaro la variabile dell api
+      let api = store.endpoint;
+
+      // Aggiungo all'api una variabile per fare la ricerca dei film
+      api += store.apiSearchFlim;
+
+      // Aggiungo alla chiamata api la chiave per far si che riceva l'accesso e il parametro di ricerca
+      api += `${store.apiKey}&query=${store.search}`;
+
+      axios.get(api).then((response) => {
+        store.filmsArray = response.data.results
+        console.log(response)
+      });
+    }
   },
 }
 </script>
 <template>
   <div>
-    <Header />
+    <Header @perform_search="getFilmsInfo" />
     <Main />
   </div>
 </template>

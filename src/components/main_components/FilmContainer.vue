@@ -22,9 +22,8 @@ export default {
 }
 </script>
 <template>
-    <div>
-
-        <FilmCard />
+    <div class="row mt-5">
+        <FilmCard v-for="film, index in store.filmsArray" :key="index" :film="film" />
     </div>
 </template>
 <style lang="scss" scoped>

@@ -20,17 +20,21 @@ export default {
     <header>
         <div class="container-fluid">
             <div class="row py-3">
+
                 <div class="col-6">
                     <div>
                         <h1>BOOLFLIX</h1>
                     </div>
                 </div>
+
                 <div class="col-6">
                     <div class="right-header-side">
                         <input type="text" class="mx-3" v-model="store.search">
-                        <button type="button" @click="" class="btn btn-sm btn-danger ">Search</button>
+                        <button type="button" @click="$emit('perform_search')"
+                            class="btn btn-sm btn-danger ">Search</button>
                     </div>
                 </div>
+
             </div>
         </div>
 

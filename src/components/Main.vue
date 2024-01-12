@@ -22,9 +22,8 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <div class="container">
         <FilmContainer />
-
     </div>
 </template>
 <style lang="scss" scoped>
