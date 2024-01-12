@@ -21,18 +21,26 @@ export default {
         <div class="container-fluid">
             <div class="row py-3">
 
+                <!-- Left Header side -->
                 <div class="col-6">
+
                     <div>
                         <h1>BOOLFLIX</h1>
                     </div>
+
                 </div>
 
+                <!-- Right Header side -->
                 <div class="col-6">
+
                     <div class="right-header-side">
+
+                        <!-- Searchbox and reasearch button -->
                         <input type="text" class="mx-3" v-model="store.search">
                         <button type="button" @click="$emit('perform_search')"
                             class="btn btn-sm btn-danger ">Search</button>
                     </div>
+
                 </div>
 
             </div>

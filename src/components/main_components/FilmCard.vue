@@ -40,15 +40,24 @@ export default {
 }
 </script>
 <template>
+    <!-- Contenitore della card -->
     <div class="col-3 my-3">
 
+        <!-- Card -->
         <div>
+            <!-- Titolo della Film -->
             <p> {{ film.title }}</p>
+
+            <!-- Titolo originale del film -->
             <p> {{ film.original_title }}</p>
+
+            <!-- Lingua del film (in formato bandiera) -->
             <img :src="FlagUrl" :alt="film.original_language" />
-            <p> {{ film.original_language.toUpperCase() }}</p>
+
+            <!-- Voto del film medio  -->
             <p> {{ film.vote_average }} </p>
         </div>
+
     </div>
 </template>
 <style lang="scss" scoped>

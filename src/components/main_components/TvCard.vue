@@ -39,14 +39,24 @@ export default {
 }
 </script>
 <template>
+    <!-- Contenitore della card -->
     <div class="col-3 my-3">
 
+        <!-- Card -->
         <div>
+            <!-- titolo della serieTv -->
             <p> {{ tv.name }}</p>
+
+            <!-- titolo originale della serieTv -->
             <p> {{ tv.original_name }}</p>
+
+            <!-- Lingua della serieTv (in formato bandiera) -->
             <img :src="FlagUrl" :alt="tv.original_language" />
+
+            <!-- Voto medio della serieTv -->
             <p> {{ tv.vote_average }} </p>
         </div>
+
     </div>
 </template>
 <style lang="scss" scoped>
