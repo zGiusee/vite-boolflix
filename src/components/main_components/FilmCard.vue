@@ -59,28 +59,42 @@ export default {
 </script>
 <template>
     <!-- Contenitore della card -->
-    <div class="col-12 col-md-4 col-lg-3 col-xxl-2 my-4">
+    <div class="col-2 my-4 card-container">
 
-        <div class="card-img-container">
-            <img :src="posterUrl" alt="">
-        </div>
+        <div class="card">
 
-        <!-- Card -->
-        <div class="card_container">
-            <!-- Titolo della Film -->
-            <h4> {{ film.title }}</h4>
-
-            <!-- Titolo originale del film -->
-            <h5> {{ film.original_title }}</h5>
-
-            <!-- Lingua del film (in formato bandiera) -->
-            <div>
-                <img class="flag-img" :src="FlagUrl" :alt="film.original_language" />
+            <!-- Card Front -->
+            <div class="card-img-container">
+                <img :src="posterUrl" alt="">
             </div>
 
-            <!-- Voto medio del film numerico e stelline -->
-            <div>
-                <p>Recensioni: <i class="bi bi-star-fill" v-for="star, index in stars"></i> {{ starRating }}/5 </p>
+            <!-- Card retro -->
+            <div class="card-retro-container">
+                <!-- Titolo della Film -->
+                <div>
+                    <h4> {{ film.title }}</h4>
+                </div>
+
+                <!-- Titolo originale del film -->
+                <div>
+                    <h5> {{ film.original_title }}</h5>
+                </div>
+
+                <!-- Overview del film -->
+                <div>
+                    <p>{{ film.overview }}</p>
+                </div>
+
+                <!-- Lingua del film (in formato bandiera) -->
+                <div>
+                    <img class="flag-img" :src="FlagUrl" :alt="film.original_language" />
+                </div>
+
+                <!-- Voto medio del film numerico e stelline -->
+                <div>
+                    <p>Recensioni: <i class="bi bi-star-fill" v-for="star, index in stars"></i> {{ starRating }}/5 </p>
+                </div>
+
             </div>
 
         </div>
@@ -91,16 +105,11 @@ export default {
 @use '../../styles/generals.scss' as *;
 @use '../../styles/partials/mixins' as *;
 
+// STILE DELLE CARDS
+@use '../../styles/partials/card' as*;
+
 .bi-star-fill {
     color: white;
     padding: 0px 2px;
-}
-
-.card_container {
-    @include card_properties;
-}
-
-.card-img-container {
-    @include card_poster_properties;
 }
 </style>

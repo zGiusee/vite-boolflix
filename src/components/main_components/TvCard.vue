@@ -60,29 +60,44 @@ export default {
 </script>
 <template>
     <!-- Contenitore della card -->
-    <div class="col-2 my-4 ">
+    <div class="col-2 my-4 card-container">
 
-        <div class="card-img-container">
-            <img :src="posterUrl" alt="">
-        </div>
+        <div class="card">
 
-        <!-- Card -->
-        <div class="card_container">
-            <!-- titolo della serieTv -->
-            <h4> {{ tv.name }}</h4>
-
-            <!-- titolo originale della serieTv -->
-            <h5> {{ tv.original_name }}</h5>
-
-            <div>
-                <!-- Lingua della serieTv (in formato bandiera) -->
-                <img class="flag-img" :src="FlagUrl" :alt="tv.original_language" />
+            <!-- Card Front -->
+            <div class="card-img-container">
+                <img :src="posterUrl" alt="">
             </div>
 
-            <div>
-                <!-- Voto medio della serieTv numerico e stelline-->
-                <p>Recensioni: <i class="bi bi-star-fill" v-for="star, index in stars"></i> {{ starRating }}/5 </p>
+            <!-- Card retro -->
+            <div class="card-retro-container">
+                <!-- Titolo della SerieTV -->
+                <div>
+                    <h4> {{ tv.name }}</h4>
+                </div>
+
+                <!-- Titolo originale della SerieTV -->
+                <div>
+                    <h5> {{ tv.original_name }}</h5>
+                </div>
+
+                <!-- Overview della SeireTv -->
+                <div>
+                    <p>{{ tv.overview }}</p>
+                </div>
+
+                <!-- Lingua della SerieTV (in formato bandiera) -->
+                <div>
+                    <img class="flag-img" :src="FlagUrl" :alt="tv.original_language" />
+                </div>
+
+                <!-- Voto medio della SerieTV numerico e stelline -->
+                <div>
+                    <p>Recensioni: <i class="bi bi-star-fill" v-for="star, index in stars"></i> {{ starRating }}/5 </p>
+                </div>
+
             </div>
+
         </div>
 
     </div>
@@ -91,14 +106,8 @@ export default {
 @use '../../styles/generals.scss' as *;
 @use '../../styles/partials/mixins' as *;
 
-
-.card_container {
-    @include card_properties;
-}
-
-.card-img-container {
-    @include card_poster_properties;
-}
+// STILE DELLE CARDS
+@use '../../styles/partials/card' as*;
 
 .bi-star-fill {
     color: white;
