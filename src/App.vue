@@ -23,7 +23,7 @@ export default {
   methods: {
     getFilmsAndTvInfo() {
 
-      // ********** CHIAMATA API FILM **************
+      // ********** CHIAMATA API Film **************
       // Dichiaro la variabile dell apiFilms
       let apiFilms = store.endpoint;
 

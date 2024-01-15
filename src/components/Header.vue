@@ -22,10 +22,25 @@ export default {
             <div class="row py-3">
 
                 <!-- Left Header side -->
-                <div class="col-6">
+                <div class="col-6 left-header-side">
 
-                    <div>
-                        <img class="mx-3" src="../img/BoolflixImg.png" alt="Boolflix Logo">
+                    <div class="d-flex align-items-center ">
+                        <!-- Logo -->
+                        <div>
+                            <img class="mx-3" src="../img/BoolflixImg.png" alt="Boolflix Logo">
+                        </div>
+
+                        <!-- Section link list -->
+                        <div>
+                            <ul>
+                                <li>Home</li>
+                                <li>Serie TV</li>
+                                <li>Film</li>
+                                <li>Nuovi e popolari</li>
+                                <li>La mia lista</li>
+                                <li>Sfoglia per lingua</li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -57,6 +72,29 @@ header {
 
     img {
         width: 150px;
+    }
+
+    .left-header-side {
+
+        ul {
+            display: flex;
+            margin: 0px;
+            list-style-type: none;
+
+            li {
+                color: rgba(255, 255, 255, 0.7);
+                cursor: pointer;
+                padding: 0px 7px;
+
+                &:hover {
+                    color: white;
+
+                }
+            }
+        }
+
+
+
     }
 
     .right-header-side {
