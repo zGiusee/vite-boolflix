@@ -25,7 +25,7 @@ export default {
                 <div class="col-6">
 
                     <div>
-                        <h1>BOOLFLIX</h1>
+                        <img class="mx-3" src="../img/BoolflixImg.png" alt="Boolflix Logo">
                     </div>
 
                 </div>
@@ -36,9 +36,8 @@ export default {
                     <div class="right-header-side">
 
                         <!-- Searchbox and reasearch button -->
-                        <input type="text" class="mx-3" v-model="store.search">
-                        <button type="button" @click="$emit('perform_search')"
-                            class="btn btn-sm btn-danger ">Search</button>
+                        <input type="text" class="my_src" placeholder="Effettua una ricerca" v-model="store.search">
+                        <button type="button" @click="$emit('perform_search')" class="my-btn mx-4 ">Search</button>
                     </div>
 
                 </div>
@@ -51,12 +50,13 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/variable' as*;
+@use '../styles/partials/mixins' as *;
 
 header {
     background-color: $my_black;
 
-    h1 {
-        color: rgb(255, 0, 0);
+    img {
+        width: 150px;
     }
 
     .right-header-side {
@@ -64,6 +64,21 @@ header {
         align-items: center;
         justify-content: end;
         height: 100%;
+
+
+        .my-btn {
+            @include my_small_btn_red_white;
+            padding: 9px 15px;
+        }
+
+        .my_src {
+            height: 30px;
+            width: 250px;
+            padding: 20px 15px;
+            margin-right: 20px;
+
+            @include my_searchbox_red_white;
+        }
 
         // ul {
         //     margin-bottom: 0;

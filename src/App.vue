@@ -35,7 +35,6 @@ export default {
 
       axios.get(apiFilms).then((response) => {
         store.filmsArray = response.data.results;
-        store.researched = true;
         console.log(store.filmsArray)
       });
 
@@ -53,7 +52,6 @@ export default {
 
       axios.get(apiTv).then((response) => {
         store.tvArray = response.data.results;
-        store.researched = true;
         console.log(store.tvArray)
       });
 
@@ -64,9 +62,17 @@ export default {
 <template>
   <div>
     <Header @perform_search="getFilmsAndTvInfo" />
-    <Main />
+    <div class="main">
+      <Main />
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @use './styles/generals.scss' as *;
+@use './styles/partials/variable' as*;
+
+.main {
+  background-color: $my_black_lig;
+  min-height: 100vh;
+}
 </style>

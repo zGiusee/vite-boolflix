@@ -22,4 +22,7 @@ export const store = reactive({
 
     // Variabile che indica se la ricerca sia stata effettuata o no
     researched: false,
+
+    // Variabile per l'indirizzo relativo delle immagini
+    posterUrl: 'https://image.tmdb.org/t/p/w500'
 })

@@ -1,0 +1,68 @@
+@use './variable' as *;
+
+// CARD PROPERITES
+// Usata in FilmCard.vue e TvCard.vue
+@mixin card_properties {
+    text-align: center;
+
+    h4 {
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    h5 {
+        font-size: 15px;
+    }
+
+    .flag-img,
+    h4,
+    h5,
+    p {
+        color: white;
+        margin-top: 15px;
+    }
+}
+
+// Usata in FilmCard.vue e TvCard.vue
+@mixin card_poster_properties {
+    display: flex;
+    justify-content: center;
+
+    img {
+        min-height: 430px;
+        width: 280px;
+    }
+}
+
+
+// HEADER
+@mixin my_small_btn_red_white {
+    background-color: $my_red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.4s;
+    border-radius: 15px;
+
+    &:hover {
+        background-color: white;
+        color: $my_red;
+        border-radius: 0px;
+    }
+}
+
+@mixin my_searchbox_red_white {
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    background-color: $my_black_lig;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: white;
+    }
+}

@@ -22,10 +22,11 @@ export default {
 }
 </script>
 <template>
-    <div class="container">
+    <main class="container-fluid">
         <FilmContainer />
-    </div>
+    </main>
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
+@use '../styles/partials/variable' as *;
 </style>
