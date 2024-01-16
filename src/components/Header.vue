@@ -50,9 +50,19 @@ export default {
 
                     <div class="right-header-side">
 
-                        <!-- Searchbox and reasearch button -->
-                        <input type="text" class="my_src" placeholder="Effettua una ricerca" v-model="store.search">
-                        <button type="button" @click="$emit('perform_search')" class="my-btn mx-4 ">Search</button>
+                        <div>
+                            <!-- Searchbox and reasearch button -->
+                            <i class="bi bi-search "></i>
+                            <input type="text" class="my_src" @keyup.enter="$emit('perform_search')"
+                                placeholder="Effettua una ricerca" v-model="store.search">
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -103,6 +113,12 @@ header {
         justify-content: end;
         height: 100%;
 
+        .bi-search {
+            color: white;
+            margin-right: 15px;
+            font-size: 20px
+        }
+
 
         .my-btn {
             @include my_small_btn_red_white;
@@ -111,8 +127,8 @@ header {
 
         .my_src {
             height: 30px;
-            width: 250px;
-            padding: 20px 15px;
+            width: 200px;
+            padding: 17px 15px;
             margin-right: 20px;
 
             @include my_searchbox_red_white;

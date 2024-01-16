@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Main from './components/Main.vue';
 import Header from './components/Header.vue';
+import UserSelection from './components/UserSelection.vue';
 
 import { store } from './store.js';
 
@@ -11,6 +12,7 @@ export default {
   components: {
     Header,
     Main,
+    UserSelection
   },
   data() {
     return {
@@ -61,18 +63,51 @@ export default {
 </script>
 <template>
   <div>
-    <Header @perform_search="getFilmsAndTvInfo" />
-    <div class="main">
-      <Main />
-    </div>
+
+    <transition name="slide-up">
+
+      <div v-if="store.selectedUser" class="main-style">
+        <!-- SELEZIONE UTENTE -->
+        <UserSelection></UserSelection>
+      </div>
+
+      <div v-else>
+        <!-- HEADER -->
+        <Header @perform_search="getFilmsAndTvInfo" />
+
+        <!-- MAIN -->
+        <div class="main-style">
+          <Main />
+        </div>
+      </div>
+
+    </transition>
+
   </div>
 </template>
 <style lang="scss" scoped>
 @use './styles/generals.scss' as *;
 @use './styles/partials/variable' as*;
 
-.main {
+.main-style {
   background-color: $my_black_lig;
   min-height: 100vh;
+
+}
+
+// PROPRIETà ANIMAZIONE
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }
 </style>

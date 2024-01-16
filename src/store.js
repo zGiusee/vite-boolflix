@@ -20,8 +20,27 @@ export const store = reactive({
     // Search textbox variable
     search: '',
 
-    // Variabile che indica se la ricerca sia stata effettuata o no
-    researched: false,
+    // Variabile che indica se l'utente abbia scelto con che profilo entrare
+    selectedUser: true,
+
+    usersInfo: [
+        {
+            name: 'Profilo 1',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117',
+        },
+        {
+            name: 'Profilo 2',
+            image: 'https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-dyrp6bw6adbulg5b.jpg',
+        },
+        {
+            name: 'Profilo 3',
+            image: 'https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg',
+        },
+        {
+            name: 'Profilo 4',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117',
+        }
+    ],
 
     // Variabile per l'indirizzo relativo delle immagini
     posterUrl: 'https://image.tmdb.org/t/p/w500'

@@ -59,7 +59,7 @@ export default {
 </script>
 <template>
     <!-- Contenitore della card -->
-    <div class="col-2 my-4 card-container">
+    <div class="col-2 m-2 card-container">
 
         <div class="card">
 
