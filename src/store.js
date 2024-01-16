@@ -23,6 +23,7 @@ export const store = reactive({
     // Variabile che indica se l'utente abbia scelto con che profilo entrare
     selectedUser: true,
 
+    // Array che contiene le informazioni degli user
     usersInfo: [
         {
             name: 'Profilo 1',

@@ -50,18 +50,25 @@ export default {
 
                     <div class="right-header-side">
 
+                        <!-- SEARCHBOX -->
                         <div>
                             <!-- Searchbox and reasearch button -->
                             <i class="bi bi-search "></i>
                             <input type="text" class="my_src" @keyup.enter="$emit('perform_search')"
                                 placeholder="Effettua una ricerca" v-model="store.search">
                         </div>
-                        <div>
-                            <ul>
-                                <li>
 
-                                </li>
-                            </ul>
+                        <!-- USER IMG AND BELL ICON -->
+                        <div class="user-select-container">
+
+                            <div>
+                                <i class="bi bi-bell"></i>
+                            </div>
+
+                            <div>
+                                <img :src="store.usersInfo[0].image" :alt="store.usersInfo[0].name">
+                            </div>
+
                         </div>
                     </div>
 
@@ -129,16 +136,27 @@ header {
             height: 30px;
             width: 200px;
             padding: 17px 15px;
-            margin-right: 20px;
+
 
             @include my_searchbox_red_white;
         }
 
-        // ul {
-        //     margin-bottom: 0;
-        //     list-style-type: none;
-        //     display: flex;
-        // }
+        .user-select-container {
+            padding: 0px 15px;
+            display: flex;
+            align-items: center;
+
+
+            img {
+                width: 30px;
+            }
+
+            .bi-bell {
+                color: white;
+                font-size: 20px;
+                margin-right: 10px;
+            }
+        }
     }
 }
 </style>
